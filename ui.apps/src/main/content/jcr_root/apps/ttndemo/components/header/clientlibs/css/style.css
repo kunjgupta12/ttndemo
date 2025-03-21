@@ -1,0 +1,65 @@
+/* Header */
+
+/* LOGO PART */
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom:2px solid black;
+}
+
+.logo img{
+    width: 70px;
+}
+
+.logo a{
+    font-size: 20px;
+    margin-left: 100px;
+}
+
+
+/******* Menu (Hamburger) *******/
+.menu{
+    display:none;
+}
+.menu span{
+    font-size:50px;
+}
+
+
+
+
+/***********Responsive for Tablet view  **********/
+
+@media screen and (max-width : 768px){
+
+    /*** Hamburger Menu *****/
+    header{
+        display:flex;
+        flex-wrap: wrap;
+    }
+
+    .logo{
+        width:50%;
+        border: none;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .menu{
+        width:50%;
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+    }
+    .menu span{
+        padding-top: 10px;
+    }
+    .navbar{
+        display: none;
+    }
+    .menu:hover + .navbar{
+        display: flex;
+        flex-direction: column;
+    }
+
+}

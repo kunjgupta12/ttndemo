@@ -1,0 +1,6 @@
+<sly data-sly-use.model="com.ttn.demo.core.models.HeadingModel" />
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+<sly data-sly-call="${clientlib.css @ categories='blogpage.heading'}" />
+
+<h1 class="blog-title">${model.title}</h1>
+<p class="blog-date">${model.date} by <strong>${model.author}</strong></p>

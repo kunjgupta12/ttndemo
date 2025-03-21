@@ -1,0 +1,26 @@
+<sly data-sly-use.model="com.ttn.demo.core.models.BlogListModel">
+
+    <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+    <sly data-sly-call="${clientlib.css @ categories='custom.blog'}" />
+
+    <main class="container">
+        <section class="blogs">
+            <sly data-sly-list.blog="${model.blogItems}">
+                <article class="blog-card">
+                    <div class="blog-content">
+                        <h2 class="blog-title">${blog.title}</h2>
+                        <p class="blog-date">${blog.date}</p>
+                        <p>${blog.description}</p>
+                        <a href="${blog.link}">Continue reading</a>
+                    </div>
+                    <div class="blog-image">
+                        <img src="${blog.image}" alt="thumbnail">
+                    </div>
+                </article>
+            </sly>
+            <sly data-sly-test="${model.blogItems.size==0}">
+                <h2 class="blog-title">Sorry No Blogs</h2>
+            </sly>
+        </section>
+    </main>
+</sly>

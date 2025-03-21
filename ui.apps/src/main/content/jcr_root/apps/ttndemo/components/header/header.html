@@ -1,0 +1,21 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.css @ categories='blogpage.header'}"/>
+
+<header id="top" data-sly-use.model="com.ttn.demo.core.models.HeaderModel">
+    <div class="logo">
+        <img src="${model.logoImage @ context='uri'}" alt="Alternate Image">
+        <h2>${model.logoText}</h2>
+    </div>
+    <div class="menu"><span>&#9776;</span></div>
+
+    <ul class="navbar">
+        <sly data-sly-list.navItem="${model.navItems}">
+            <li>
+
+                <sly data-sly-test="${navItem.isOpen=='false'}">
+                    <a href="${navItem.link @ context='uri'}.html">${navItem.title}</a>
+                </sly>
+            </li>
+        </sly>
+    </ul>
+</header>

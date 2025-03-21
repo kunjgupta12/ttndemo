@@ -1,0 +1,11 @@
+<sly data-sly-use.model="com.ttn.demo.core.models.About">
+
+    <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+    <sly data-sly-call="${clientlib.css @ categories='blogpage.about'}" />
+
+    <div class="about-box">
+        <h4 class="font-italic">About</h4>
+        <p>${model.about}</p>
+    </div>
+
+</sly>

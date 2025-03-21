@@ -1,0 +1,11 @@
+
+.blog-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+}
+.blog-date {
+    font-style: italic;
+    color: gray;
+    margin-bottom: 10px;
+}

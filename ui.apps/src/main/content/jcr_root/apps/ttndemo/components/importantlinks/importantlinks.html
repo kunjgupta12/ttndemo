@@ -1,0 +1,14 @@
+<sly data-sly-use.links="com.ttn.demo.core.models.ImportantLinks">
+
+    <h1>Maintitle : ${links.mainTitle}</h1>
+
+    <div data-sly-list.item="${links.linksWithTitle}">
+
+        <p> Title : <b>${item.Title} </b>
+        </p>
+
+        <a href=${item.Link} target=${item.LinkTarget}>Link</a>
+
+    </div>
+    
+</sly>

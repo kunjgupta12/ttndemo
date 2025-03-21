@@ -1,0 +1,15 @@
+<sly data-sly-use.model="com.ttn.demo.core.models.ArchivesModel" />
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+<sly data-sly-call="${clientlib.css @ categories='custom.archieve'}" />
+
+<div>
+    <h4><em>Archives</em></h4>
+    <ul>
+        <sly data-sly-list.date="${model.archiveDates}">
+            <li class="archive-date">
+                <a href="${model.link}?date=${date}">${date}</a>
+            </li>
+        </sly>
+    </ul>
+</div>

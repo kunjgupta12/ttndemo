@@ -1,0 +1,19 @@
+<sly data-sly-use.footerModel="com.ttn.demo.core.models.FooterModel" />
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+<sly data-sly-call="${clientlib.css @ categories='custom.footer'}" />
+
+<a href="#top" aria-label="Back to top" class="back-to-top-class">Back to top</a>
+
+<footer class="${footerModel.footerClass}">
+    <nav>
+        <ul class="footer-links" data-sly-list.navTitle="${footerModel.navTitles}">
+            <li>
+                <a href="${footerModel.navLink}" aria-label="Navigate to ${navTitle}" class="footer-link">
+                    ${navTitle}
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <p class="footer-text">&copy; ${footerModel.title}</p>
+</footer>
+

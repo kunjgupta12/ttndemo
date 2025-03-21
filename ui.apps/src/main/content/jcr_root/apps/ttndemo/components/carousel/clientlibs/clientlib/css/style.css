@@ -1,0 +1,47 @@
+
+.cmp-carousel__content{
+	position: relative;
+}
+.teaser{
+	position:relative;
+}
+.cmp-teaser{
+	display: flex;
+	justify-content: center;
+}
+.cmp-teaser__content{
+	position: absolute;
+	bottom: 0;
+}
+
+.cmp-teaser__title{
+	font-size: 25px;
+	margin-top: -20px;
+	margin-bottom: 2px;
+}
+.cmp-teaser__description p{
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.cmp-carousel__action{
+	border-radius: 50%;
+	padding: 0 12px;
+	background: transparent;
+	border: none;
+}
+
+.cmp-carousel__action--previous{
+	position: absolute;
+	top: 45%;
+	left: 0;
+}
+.cmp-carousel__action--next{
+	position: absolute;
+	top: 45%;
+	left: 95%;
+}
+.cmp-carousel__action-text{
+	font-weight: bolder;
+	font-size: 25px;
+}
