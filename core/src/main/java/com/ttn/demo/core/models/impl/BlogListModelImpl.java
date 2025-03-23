@@ -69,7 +69,7 @@ public class BlogListModelImpl implements BlogListModel {
             String title = childPage.getTitle();
             String description = childPage.getProperties().get("jcr:description", "No Description");
             String link = childPage.getPath() + ".html";
-            String imagePath =utilClass.getImagePath(childPage);
+            String imagePath =utilClass.getImagePath(request,childPage);
 
             blogs.add(new BlogItem(title, formattedDate, description, link, imagePath));
             count++;

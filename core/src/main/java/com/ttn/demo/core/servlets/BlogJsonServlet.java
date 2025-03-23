@@ -50,7 +50,7 @@ public class BlogJsonServlet extends SlingSafeMethodsServlet {
                     blogObject.addProperty("description", childPage.getProperties().get("jcr:description", "No Description"));
                     blogObject.addProperty("date", childPage.getProperties().get("jcr:created", String.class));
                     blogObject.addProperty("link", childPage.getPath() + ".html");
-                    blogObject.addProperty("image", utilClass.getImagePath(childPage));
+                    blogObject.addProperty("image", utilClass.getImagePath(request,childPage));
 
                     blogArray.add(blogObject);
                 }

@@ -60,18 +60,20 @@ public class UtilClass {
             return false;
         }
     }
-    public String getImagePath(Page childPage) {
-        String imagePath = "/content/dam/default.jpg";
-        Resource imageResource = childPage.getContentResource("root/responsivegrid/image/file/jcr:content");
-
-        if (imageResource != null) {
-            ValueMap properties = imageResource.getValueMap();
+    public  String getImagePath(SlingHttpServletRequest request, Page page) {
+        String ImagePath = page.getPath() + "/jcr:content/cq:featuredimage/file/jcr:content";
+        ResourceResolver resolver = request.getResourceResolver();
+        Resource ImageNode = resolver.getResource(ImagePath);
+        String ImageLink = "";
+        try {
+            ValueMap properties = ImageNode.getValueMap();
             if (properties.containsKey("jcr:data")) { // Check if binary data exists
-                imagePath = childPage.getPath() + "/jcr:content/root/responsivegrid/image/file";
+                ImageLink = resolver.map(request, ImagePath) + "/jcr:data";
             }
+        } catch (Exception e) {
+            return "{\"message\" : \" Could not get Banner Image from the Banner Component of Page\"";
         }
-
-        return imagePath;
+        return ImageLink;
     }
 
 }
