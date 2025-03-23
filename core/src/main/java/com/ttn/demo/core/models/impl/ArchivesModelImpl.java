@@ -26,7 +26,8 @@ public class ArchivesModelImpl implements ArchivesModel {
     private SlingHttpServletRequest request;
 
     private List<String> archiveDates;
-String link;
+
+    String link;
     @PostConstruct
     protected void init() {
         // Use a Set to store unique months
@@ -37,7 +38,7 @@ UtilClass utilClass=new UtilClass();
 
         if (currentPage != null) {
             Page parentPage = currentPage.getParent();
-link=currentPage.getParent().getPath()+".html";
+            link=currentPage.getParent().getPath()+".html";
             if (parentPage != null) {
                 for (Iterator<Page> it = parentPage.listChildren(); it.hasNext(); ) {
                     Page childPage = it.next();

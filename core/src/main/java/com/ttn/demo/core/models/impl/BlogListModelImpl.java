@@ -71,7 +71,7 @@ public class BlogListModelImpl implements BlogListModel {
             String link = childPage.getPath() + ".html";
             String imagePath =utilClass.getImagePath(childPage);
 
-            blogs.add(new B0logItem(title, formattedDate, description, link, imagePath));
+            blogs.add(new BlogItem(title, formattedDate, description, link, imagePath));
             count++;
         }
 

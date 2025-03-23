@@ -1,49 +1,36 @@
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #f8f8f8;
-    border-top: 2px solid #ddd;
-    margin-top: 30px;
-}
-
-/* General link styling */
-a {
-    text-decoration: none;
-    color: #007BFF;
-    font-weight: bold;
-}
-
-/* Centering the "Back to top" link */
-a[href="#top"] {
+.upper-footer{
     display: flex;
     justify-content: center;
-    margin-bottom: 15px;
+    margin-top:10px;
 }
-
-/* Footer navigation links */
-.footer-links {
-    list-style: none;
+.upper-footer a{
+    margin-top: 30px;
+    text-decoration: none;
+    padding-bottom: 10px;
+}
+.lower-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    background-color: #f0f0f0;
+}
+.lower-footer a{
+    text-decoration: none;
+    padding-bottom: 10px;
+}
+.lower-footer ul{
     display: flex;
     gap: 10px;
     justify-content: center;
-    margin: 0;
-    padding: 0;
+    align-items: center;
+    margin-left: -40px;
+    text-align: center;
+    list-style: none;
+}
+li{
+    color: rgb(29, 142, 187);
+    cursor: pointer;
 }
 
-.footer-links li {
-    display: inline;
-}
-
-/* Footer link styles */
-.footer-links a {
-    text-decoration: none;
-    color: #007BFF;
-    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-    transition: color 0.3s ease-in-out;
-}
-
-/* Hover effect for better UX */
-.footer-links a:hover {
-    color: #0056b3;
-    text-decoration: underline;
-}

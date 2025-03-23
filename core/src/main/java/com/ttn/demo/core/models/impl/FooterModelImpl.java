@@ -6,44 +6,31 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
-import java.util.Arrays;
+import javax.annotation.PostConstruct;
+import java.util.ArrayList;
 import java.util.List;
 
-@Model(
-        adaptables = Resource.class,
-        adapters = FooterModel.class,
-        defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
-)
+@Model(adaptables = Resource.class , adapters = FooterModel.class,defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class FooterModelImpl implements FooterModel {
 
-    @ValueMapValue
-    private String title;
+    @ValueMapValue(name = "navTitle")
+    List<String> navTitle;
 
-    @ValueMapValue
-    private String footerClass;
+    @ValueMapValue(name = "navLink")
+    List<String> navLinks;
 
-    @ValueMapValue
-    private String navLink;
+    private List<NavItems> navItems;
 
-    @ValueMapValue
-    private String[] navTitle; // To handle multiple titles
-
-    @Override
-    public String getTitle() {
-        return title;
+    @PostConstruct
+    public void init() {
+        navItems = new ArrayList<>();
+        for(int i = 0 ; i < navTitle.size() ; i++) {
+            navItems.add(new NavItems(navTitle.get(i), navLinks.get(i)+".html",""));
+        }
     }
 
     @Override
-    public String getFooterClass() {
-        return footerClass;
-    }
-
-    public String getNavLink() {
-        return navLink;
-    }
-
-    @Override
-    public List<String> getNavTitles() {
-        return navTitle != null ? Arrays.asList(navTitle) : null;
+    public List<NavItems> getNavItems() {
+        return navItems;
     }
 }
